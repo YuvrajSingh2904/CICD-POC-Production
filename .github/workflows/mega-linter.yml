@@ -1,5 +1,9 @@
 name: MegaLinter
 
+permissions:
+  issues: write
+  pull-requests: write
+
 on:
   push:
     branches: [ main, abhishek ]
