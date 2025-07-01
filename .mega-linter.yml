@@ -1,4 +1,7 @@
 FLAVOR: salesforce
-ENABLE_LINTERS:
-  - APEX
-APEX_DEFAULT_STYLE: standard
+
+# Explicitly enable APEX linter (optional but ensures activation)
+APEX:
+  ENABLE: true
+# Optional, restrict scope of scan
+FILTER_REGEX_INCLUDE: 'force-app/main/default/classes/.*\.cls'

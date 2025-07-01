@@ -1,10 +1,9 @@
-public  class  ShivamDemo{
-public ShivamDemo( ) 
-{
-System.debug( 'Constructor executed.' )
- }
+public with sharing class ShivamDemo {
+    public ShivamDemo( {
+        System.debug('Missing parenthesis');
+    }
 
-public static  void showMessage( ) {
-System.debug('This is a clean and valid Apex method.') // Missing semicolon
-}
+    public static void showMessage() {
+        System.debug('Missing semicolon')
+    }
 }
