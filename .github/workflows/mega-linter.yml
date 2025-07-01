@@ -13,6 +13,15 @@ jobs:
         with:
           node-version: '18'
 
+      # ✅ Cache global npm modules (Salesforce CLI + plugins)
+      - name: Cache global npm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       # Install Salesforce CLI
       - name: Install Salesforce CLI
         run: |
@@ -27,4 +36,4 @@ jobs:
 
       # Run MegaLinter with Salesforce flavor and pinned SHA
       - name: MegaLinter
-        uses: oxsecurity/megalinter@bacb5f8674e3730b904ca4d20c8bd477bc51b1a7  # Pin to SHA of v7.13.0
+        uses: oxsecurity/megalinter@bacb5f8674e3730b904ca4d20c8bd477bc51b1a7

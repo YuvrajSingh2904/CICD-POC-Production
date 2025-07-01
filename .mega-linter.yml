@@ -1,10 +1,8 @@
-# .mega-linter.yml
 FLAVOR: salesforce
 
 DISABLE_LINTERS:
-  
   - REPOSITORY_KICS
   - REPOSITORY_CHECKOV
-  - SALESFORCE_LIGHTNING_FLOW_SCANNER  # Optional, enable if you use flows
+  - SALESFORCE_LIGHTNING_FLOW_SCANNER
 
 SPELL_CSPELL_CONFIG_FILE: .cspell.json
