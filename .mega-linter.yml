@@ -2,7 +2,7 @@
 FLAVOR: salesforce
 
 DISABLE_LINTERS:
-  - SPELL_CSPELL
+  
   - REPOSITORY_KICS
   - REPOSITORY_CHECKOV
   - SALESFORCE_LIGHTNING_FLOW_SCANNER  # Optional, enable if you use flows
