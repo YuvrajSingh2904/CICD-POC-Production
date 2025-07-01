@@ -1,1 +1,4 @@
 FLAVOR: salesforce
+ENABLE_LINTERS:
+  - APEX
+APEX_DEFAULT_STYLE: standard
