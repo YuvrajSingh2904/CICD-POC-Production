@@ -1,6 +1,6 @@
 public class ShivamDemo {
-    public static void hello() {
-        System.debug('Hello from Shivam in VS Code!');
-        System.debug('hiii');
+    public void testMethod() {
+        Integer x = 10  // 👈 Missing semicolon!
+        System.debug('x value: ' + x);
     }
 }
