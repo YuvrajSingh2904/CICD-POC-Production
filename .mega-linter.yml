@@ -1,0 +1,4 @@
+ENABLE_LINTERS:
+  - APEX
+  - XML
+  - JSON
