@@ -5,22 +5,25 @@ on: [push, pull_request]
 jobs:
   mega-linter:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
-      # Optional: Set up Node.js for Salesforce CLI
+      # Setup Node.js (needed for SF CLI + plugins)
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      # ✅ Cache global npm modules (Salesforce CLI + plugins)
-      - name: Cache global npm modules
+      # ✅ Cache global npm and Salesforce CLI plugin directory to reduce CI time
+      - name: Cache NPM and SF Plugins
         uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            ~/.npm
+            ~/.local/share/sf
+          key: npm-sf-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            npm-sf-${{ runner.os }}-
 
       # Install Salesforce CLI
       - name: Install Salesforce CLI
@@ -28,12 +31,12 @@ jobs:
           npm install --global @salesforce/cli
           sf --version
 
-      # Install Salesforce scanner plugins
+      # Install Salesforce Plugins (idempotent)
       - name: Install Salesforce Plugins
         run: |
           sf plugins install @salesforce/sfdx-scanner
           sf plugins install @salesforce/sfdx-plugin-lwc-test
 
-      # Run MegaLinter with Salesforce flavor and pinned SHA
+      # Run MegaLinter using pinned SHA
       - name: MegaLinter
         uses: oxsecurity/megalinter@bacb5f8674e3730b904ca4d20c8bd477bc51b1a7

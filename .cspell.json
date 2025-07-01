@@ -3,15 +3,23 @@
   "language": "en",
   "words": [
     "sfdx",
-    "eslintcache",
+    "KICS",
+    "staticresources",
     "localdevserver",
+    "eslintcache",
+    "ehthumbs",
+    "esktop",
+    "venv",
+    "Shivam",
+    "dbaeumer",
+    "esbenp",
     "salesforcedx",
     "financialforce",
+    "tempvar",
+    "soql",
+    "SOQL",
     "CICD",
-    "sfdc",
-    "venv",
-    "pycache",
-    "forceignore"
+    "sfdc"
   ],
   "ignorePaths": [
     "**/node_modules",
