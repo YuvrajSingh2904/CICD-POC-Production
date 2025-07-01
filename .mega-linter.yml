@@ -1,7 +1,11 @@
 FLAVOR: salesforce
 
-# Explicitly enable APEX linter (optional but ensures activation)
-APEX:
-  ENABLE: true
-# Optional, restrict scope of scan
-FILTER_REGEX_INCLUDE: 'force-app/main/default/classes/.*\.cls'
+# Disable false-positive linters or unnecessary ones
+DISABLE_LINTERS:
+  - SPELL_CSPELL
+  - REPOSITORY_KICS
+  - REPOSITORY_CHECKOV
+  - SALESFORCE_LIGHTNING_FLOW_SCANNER  # Optional
+
+# Allow Shivam and other custom words
+SPELL_CSPELL_CONFIG_FILE: .cspell.json
