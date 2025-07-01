@@ -1,6 +1,6 @@
 public class ShivamDemo {
     public void testMethod() {
-        Integer x = 10  // 👈 Missing semicolon!
-        System.debug('x value: ' + x);
+        Integer x = 10
+        System.debug('x value: ' + x)
     }
 }
