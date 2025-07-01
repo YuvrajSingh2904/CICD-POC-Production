@@ -1,3 +1,1 @@
-ENABLE_LINTERS: APEX
-APEX_DEFAULT_STYLE: standard
-APEX_LINTER_RULES_PATH: .mega-rules.json
+FLAVOR: salesforce
